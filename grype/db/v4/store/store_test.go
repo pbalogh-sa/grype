@@ -175,6 +175,33 @@ func TestStore_GetVulnerability_SetVulnerability(t *testing.T) {
 				State:    v4.FixedState,
 			},
 		},
+		{
+			ID:                     "yet-another-cve",
+			PackageName:            "package-name",
+			Namespace:              "my-namespace",
+			VersionConstraint:      "< 1000.0.0",
+			VersionFormat:          "semver",
+			CPEs:                   nil,
+			RelatedVulnerabilities: nil,
+			Fix: v4.Fix{
+				Versions: []string{"1000.0.1"},
+				State:    v4.FixedState,
+			},
+		},
+		{
+			ID:                     "yet-another-cve-with-advisories",
+			PackageName:            "package-name",
+			Namespace:              "my-namespace",
+			VersionConstraint:      "< 1000.0.0",
+			VersionFormat:          "semver",
+			CPEs:                   nil,
+			RelatedVulnerabilities: nil,
+			Fix: v4.Fix{
+				Versions: []string{"1000.0.1"},
+				State:    v4.FixedState,
+			},
+			Advisories: []v4.Advisory{{ID: "ABC-12345", Link: "https://abc.xyz"}},
+		},
 	}
 
 	total := append(expected, extra...)
