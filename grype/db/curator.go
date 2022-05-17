@@ -108,6 +108,7 @@ func (c *Curator) Delete() error {
 // Update the existing DB, returning an indication if any action was taken.
 func (c *Curator) Update() (bool, error) {
 	log.Warnf("ehunn vagyok e")
+	fmt.Println("-----------------")
 	// let consumers know of a monitorable event (download + import stages)
 	importProgress := &progress.Manual{
 		Total: 1,
