@@ -14,7 +14,7 @@ type logging struct {
 }
 
 func (cfg logging) loadDefaultValues(v *viper.Viper) {
-	v.SetDefault("log.level", "")
+	v.SetDefault("log.level", "debug")
 	v.SetDefault("log.file", "")
 	v.SetDefault("log.structured", false)
 }
